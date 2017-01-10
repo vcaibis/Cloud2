@@ -1,0 +1,246 @@
+{
+ "kind": "discovery#rpcDescription",
+ "etag": "\"ODRTh3xaRR64wpeXJSlF33HMN-0/89Ore-kN1vi7ZhMRvJ8I7H19hJQ\"",
+ "discoveryVersion": "v1",
+ "id": "answerApi:v1",
+ "name": "answerApi",
+ "version": "v1",
+ "description": "This is an API",
+ "ownerDomain": "backend.myapplication.Vincent.example.com",
+ "ownerName": "backend.myapplication.Vincent.example.com",
+ "icons": {
+  "x16": "https://www.gstatic.com/images/branding/product/1x/googleg_16dp.png",
+  "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
+ },
+ "protocol": "rpc",
+ "rootUrl": "https://questionboard-155021.appspot.com/_ah/api/",
+ "rpcUrl": "https://questionboard-155021.appspot.com/_ah/api/rpc",
+ "rpcPath": "/_ah/api/rpc",
+ "parameters": {
+  "alt": {
+   "type": "string",
+   "description": "Data format for the response.",
+   "default": "json",
+   "enum": [
+    "json"
+   ],
+   "enumDescriptions": [
+    "Responses with Content-Type of application/json"
+   ],
+   "location": "query"
+  },
+  "fields": {
+   "type": "string",
+   "description": "Selector specifying which fields to include in a partial response.",
+   "location": "query"
+  },
+  "key": {
+   "type": "string",
+   "description": "API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.",
+   "location": "query"
+  },
+  "oauth_token": {
+   "type": "string",
+   "description": "OAuth 2.0 token for the current user.",
+   "location": "query"
+  },
+  "prettyPrint": {
+   "type": "boolean",
+   "description": "Returns response with indentations and line breaks.",
+   "default": "true",
+   "location": "query"
+  },
+  "quotaUser": {
+   "type": "string",
+   "description": "Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters. Overrides userIp if both are provided.",
+   "location": "query"
+  },
+  "userIp": {
+   "type": "string",
+   "description": "IP address of the site where the request originates. Use this if you want to enforce per-user limits.",
+   "location": "query"
+  }
+ },
+ "auth": {
+  "oauth2": {
+   "scopes": {
+    "https://www.googleapis.com/auth/userinfo.email": {
+     "description": "View your email address"
+    }
+   }
+  }
+ },
+ "schemas": {
+  "Answer": {
+   "id": "Answer",
+   "type": "object",
+   "properties": {
+    "content": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "question": {
+     "$ref": "Question"
+    }
+   }
+  },
+  "CollectionResponse_Answer": {
+   "id": "CollectionResponse_Answer",
+   "type": "object",
+   "properties": {
+    "items": {
+     "type": "array",
+     "items": {
+      "$ref": "Answer"
+     }
+    },
+    "nextPageToken": {
+     "type": "string"
+    }
+   }
+  },
+  "Question": {
+   "id": "Question",
+   "type": "object",
+   "properties": {
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "title": {
+     "type": "string"
+    }
+   }
+  }
+ },
+ "methods": {
+  "answerApi.get": {
+   "id": "answerApi.get",
+   "allowGet": true,
+   "parameters": {
+    "Id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "Id"
+   ],
+   "returns": {
+    "$ref": "Answer"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "answerApi.insert": {
+   "id": "answerApi.insert",
+   "parameters": {
+    "resource": {
+     "$ref": "Answer"
+    }
+   },
+   "parameterOrder": [
+    "resource"
+   ],
+   "returns": {
+    "$ref": "Answer"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "answerApi.list": {
+   "id": "answerApi.list",
+   "allowGet": true,
+   "parameters": {
+    "cursor": {
+     "type": "string"
+    },
+    "limit": {
+     "type": "integer",
+     "format": "int32"
+    }
+   },
+   "returns": {
+    "$ref": "CollectionResponse_Answer"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "answerApi.patch": {
+   "id": "answerApi.patch",
+   "supportsPatch": true,
+   "parameters": {
+    "Id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    },
+    "content": {
+     "type": "string"
+    },
+    "id": {
+     "type": "string",
+     "format": "int64"
+    },
+    "question": {
+     "$ref": "Question"
+    }
+   },
+   "parameterOrder": [
+    "Id"
+   ],
+   "returns": {
+    "$ref": "Answer"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "answerApi.remove": {
+   "id": "answerApi.remove",
+   "parameters": {
+    "Id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    }
+   },
+   "parameterOrder": [
+    "Id"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "answerApi.update": {
+   "id": "answerApi.update",
+   "parameters": {
+    "Id": {
+     "type": "string",
+     "required": true,
+     "format": "int64"
+    },
+    "resource": {
+     "$ref": "Answer"
+    }
+   },
+   "parameterOrder": [
+    "resource",
+    "Id"
+   ],
+   "returns": {
+    "$ref": "Answer"
+   },
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  }
+ }
+}

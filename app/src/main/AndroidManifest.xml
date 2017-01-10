@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vincent.afinal">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:label="@string/LoginActivityLabel">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.RegisterActivity"
+            android:label="@string/RegisterActivityLabel"
+            android:parentActivityName=".Activities.LoginActivity" />
+        <activity
+            android:name=".Activities.HomeActivity"
+            android:label="@string/HomeActivityLabel"
+            android:parentActivityName=".Activities.LoginActivity" />
+        <activity
+            android:name=".Activities.ListQuestionsActivity"
+            android:label="@string/ListQuestionActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.AddAnswerActivity"
+            android:label="@string/AddAnswerActivityLabel"
+            android:parentActivityName=".Activities.ListAnswersActivity" />
+        <activity
+            android:name=".Activities.AddQuestionActivity"
+            android:label="@string/AddQuestionActivityLabel"
+            android:parentActivityName=".Activities.ListQuestionsActivity" />
+        <activity
+            android:name=".Activities.ListAnswersActivity"
+            android:label="@string/ListAnswerActivityLabel"
+            android:parentActivityName=".Activities.ListQuestionsActivity" />
+        <activity
+            android:name=".Activities.SettingsActivity"
+            android:label="@string/SettingsActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.DisplayDataActivity"
+            android:label="@string/DisplayDataActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.LanguageActivity"
+            android:label="@string/LanguageActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.ShowUsersActivity"
+            android:label="@string/ShowUsersActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.ShowQuestionsActivity"
+            android:label="@string/ShowQuestionsActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.ShowAnswersActivity"
+            android:label="@string/ShowAnswersActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+        <activity
+            android:name=".Activities.UpdateDataActivity"
+            android:label="@string/UpdateDatasActivityLabel"
+            android:parentActivityName=".Activities.HomeActivity" />
+    </application>
+
+</manifest>
